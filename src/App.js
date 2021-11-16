@@ -4,6 +4,28 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      
+     
+        <div className="test">
+          
+          <div class="wrap">
+            <div class="cube">
+              <div class="front"></div>
+              <div class="back"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+  );
+}
+
+
+/*
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,8 +40,6 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
-  );
-}
+*/
 
 export default App;

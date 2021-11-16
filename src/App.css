@@ -15,9 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 10vh;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -28,11 +26,124 @@
   color: #61dafb;
 }
 
+.test {
+
+  
+  display: grid;
+  place-items: center;
+  min-width: 100vh;
+  min-height: 50vh;
+
+  
+}
+.face {
+
+  animation: button-transform infinite 5s linear;
+	transform-style: preserve-3d;
+  
+}
+.inner {
+  background-color: #61dafb;
+  width: 100px;
+  height: 100px;
+  transform: translateZ(100px);
+
+}
+
+.inner:hover {
+}
+.wrap {
+	perspective: 400px;
+	perspective-origin: 50% 50px;
+}
+
+.cube {
+	position: relative;
+	width: 100px;
+  transform: rotateX(-30deg) rotateY(60deg);
+	transform-style: preserve-3d;
+	animation: spin 4s infinite cubic-bezier(1,.61,.37,1.23);
+  animation-play-state: paused;      
+}
+
+.cube div {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
+
+.back {
+  background-image: url('./side.png');
+	transform: translateZ(-50px) rotateY(180deg);
+}
+.right {
+  background-image: url('./side.png');
+	transform: rotateY(-270deg) translateX(50px);
+	transform-origin: center right;
+}
+.left {
+  background-image: url('./side.png');
+	transform: rotateY(270deg) translateX(-50px);
+	transform-origin: center left;
+}
+.top {
+  background-image: url('./top.jpeg');
+	transform: rotateX(-90deg) translateY(-50px);
+	transform-origin: top center;
+}
+.bottom {
+  background-image: url('./bottom.jpg');
+	transform: rotateX(90deg) translateY(50px);
+	transform-origin: bottom center;
+}
+.front {
+  background-image: url('./side.png');
+	transform: translateZ(50px);
+}
+
+@keyframes spin {
+	0% { transform: rotateX(-30deg) rotateY(60deg); }
+	20% { transform: rotateX(-30deg) rotateY(60deg) rotateY(90deg); }
+	25% { transform: rotateX(-30deg) rotateY(60deg) rotateY(90deg); }
+	45% { transform: rotateX(-30deg) rotateY(60deg) rotateY(180deg); }
+	50% { transform: rotateX(-30deg) rotateY(60deg) rotateY(180deg); }
+	70% { transform: rotateX(-30deg) rotateY(60deg) rotateY(270deg); }
+	75% { transform: rotateX(-30deg) rotateY(60deg) rotateY(270deg); }
+	95% { transform: rotateX(-30deg) rotateY(60deg) rotateY(360deg); }
+	100% { transform: rotateX(-30deg) rotateY(60deg) rotateY(360deg); }
+}
+
+.cube:hover{
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes big-spin {
+  from {
+    transform: rotate3d(0,0,1,0deg) scale(2);
+  }
+  to {
+    transform: rotate3d(0,0,1,360deg) scale(0);
+  }
+
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes button-transform {
+  0% {
+    transform: /* skewY(0) */ rotate3d(0,2,0,0deg);
+  }
+  
+  100% {
+    transform: /* skewY(0) */ rotate3d(0,2,0,360deg);
   }
 }
