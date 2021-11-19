@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Cube from './Cube';
+import Pyramid from './Pyramid';
 
 function App() {
   return (
@@ -8,16 +10,8 @@ function App() {
      
         <div className="test">
           
-          <div class="wrap">
-            <div class="cube">
-              <div class="front"></div>
-              <div class="back"></div>
-              <div class="top"></div>
-              <div class="bottom"></div>
-              <div class="left"></div>
-              <div class="right"></div>
-            </div>
-          </div>
+          <Cube/>
+          <Pyramid/>
         </div>
         
     </div>
