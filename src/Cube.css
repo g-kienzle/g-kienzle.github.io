@@ -1,0 +1,69 @@
+.wrap {
+    position: absolute;
+    transform: translate(-50%, -50%);
+      perspective: 400px;
+      perspective-origin: 50% 50px;
+    
+  }
+  
+.cube {
+	position: relative;
+	width: 100px;
+  transform: rotateX(-45deg) rotateY(45deg);
+	transform-style: preserve-3d;
+	animation: roll 3s infinite cubic-bezier(.69,-0.27,.7,1.45);
+  animation-play-state: paused;
+}
+
+.cube div {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	transform-style: preserve-3d;
+  color: white;
+  font-size: 72pt;
+}
+
+.back {
+    background-image: url('./side.png');
+      transform: translateY(-50px) translateZ(-50px) rotateY(180deg);
+  }
+  .right {
+    left: 50px;
+    background-image: url('./side.png');
+      transform: translateY(-50px) rotateY(-270deg);
+  }
+  .left {
+    right: 50px;
+    background-image: url('./side.png');
+      transform: translateY(-50px) rotateY(270deg);
+  }
+  .top {
+    background-image: url('./top.jpeg');
+      transform: translateY(-100px) rotateX(-90deg);
+  }
+  .bottom {
+    background-image: url('./bottom.jpg');
+      transform: rotateX(90deg);
+  }
+  .front {
+    background-image: url('./side.png');
+      transform: translateY(-50px) translateZ(50px);
+  }
+
+
+@keyframes roll {
+  0% { transform: rotateX(-45deg) rotateY(45deg); }
+  12.66%, 16.66% { transform: rotateX(-45deg) rotateY(45deg) rotateX(90deg); }
+  29.33%, 33.33% { transform: rotateX(-45deg) rotateY(45deg) rotateX(90deg) rotateY(90deg); }
+  46%, 50% { transform: rotateX(-45deg) rotateY(45deg) rotateX(90deg) rotateY(90deg) rotateZ(90deg); }
+  62.66%, 66.66% { transform: rotateX(-45deg) rotateY(45deg) rotateX(90deg) rotateY(90deg) rotateZ(90deg) rotateX(90deg); }
+  79.33%, 83.33% { transform: rotateX(-45deg) rotateY(45deg) rotateX(90deg) rotateY(90deg) rotateZ(90deg) rotateX(90deg) rotateY(90deg); }
+  96%, 100% { transform: rotateX(-45deg) rotateY(45deg) rotateX(90deg) rotateY(90deg) rotateZ(90deg) rotateX(90deg) rotateY(90deg) rotateZ(90deg); }
+
+}
+
+.cube:hover{
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}

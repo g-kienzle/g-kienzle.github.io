@@ -1,4 +1,4 @@
-import './App.css';
+import './Cube.css';
 
 function Cube() {
   return (

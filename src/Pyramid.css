@@ -1,0 +1,67 @@
+.wrap2 {
+    transform: translate(-50%, -50%);
+      perspective: 400px;
+      perspective-origin: 50% 50px;
+  }
+  
+  
+  .pyramid {
+      position: relative;
+      width: 100px;
+      transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(45deg);
+      animation: spin 3s infinite cubic-bezier(.69,-0.27,.7,1.45);
+    animation-play-state: paused;
+  }
+  
+  .pyramid:hover{
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+  .pyramid div {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      transform-style: preserve-3d;
+    color: white;
+    font-size: 72pt;
+    clip-path: polygon(50% 14.4%, 100% 100%, 0 100%);
+  }
+  
+  .face1 {
+    transform: rotateX(90deg);
+    background-color: teal;
+  }
+  
+  .face2 {
+    transform: translateY(-47px) translateZ(33px) rotateX(19.571deg) ;
+    background-color: red;
+  }
+  
+  
+  .face3 {
+    transform: rotateY(120deg) translateY(-47px) translateZ(2px) translateX(-19px) rotateX(19.571deg) ;
+    background-color: lavender;
+  }
+  
+  
+  .face4 {
+    transform:  rotateY(-120deg) translateY(-47px) translateZ(1px) translateX(19px) rotateX(19.571deg) ;
+    background-color: yellowgreen;
+  }
+  
+  
+  
+  
+  
+  @keyframes spin {
+      0% { transform: rotateX(-45deg) rotateY(45deg); }
+      20% { transform: rotateX(-45deg) rotateY(45deg) rotateY(90deg); }
+      25% { transform: rotateX(-45deg) rotateY(45deg) rotateY(90deg); }
+      45% { transform: rotateX(-45deg) rotateY(45deg) rotateY(180deg); }
+      50% { transform: rotateX(-45deg) rotateY(45deg) rotateY(180deg); }
+      70% { transform: rotateX(-45deg) rotateY(45deg) rotateY(270deg); }
+      75% { transform: rotateX(-45deg) rotateY(45deg) rotateY(270deg); }
+      95% { transform: rotateX(-45deg) rotateY(45deg) rotateY(360deg); }
+      100% { transform: rotateX(-45deg) rotateY(45deg) rotateY(360deg); }
+  }

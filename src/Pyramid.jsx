@@ -1,4 +1,4 @@
-import './App.css';
+import './Pyramid.css';
 
 function Pyramid() {
   return (
