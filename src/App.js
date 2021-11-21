@@ -1,35 +1,68 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 import Cube from './Cube';
 
+function useScroll() {
+  const [scroll, setScroll] = useState ({
+    x: null,
+    y: null
+
+  })
+
+  useEffect(() => {
+
+    function handle(e){
+      setScroll({
+        x: window.scrollX / (document.documentElement.scrollWidth-window.innerWidth),
+        y: window.scrollY / (document.documentElement.scrollHeight-window.innerHeight)
+
+      })
+    }
+    window.
+    window.addEventListener("scroll", handle);
+    return () => window.removeEventListener("scroll", handle);
+
+  }, [])
+
+  return scroll;
+}
+
+
 function App() {
 
+  const {x, y} = useScroll();
 
   return (
     <div className="App">
-      
-        
-          
-        
-        
+        <header>  
           <nav className="navbar">
             <ul>
               <li><a href="default.asp">Home</a></li>
               <li><a href="news.asp">News</a></li>
               <li><a href="contact.asp">Contact</a></li>
               <li><a href="about.asp">About</a></li>
+              <li>{x}, {y}</li>
             </ul>
           </nav>
+        </header>
+        
         <body>
           
           <section className="black"> 
-            <h1>Grey Kienzle</h1>
-            <p>Front-end web developer, Python lover, Haskell enthusiast</p>
+            <div style={{transform: `translateY(${Math.min(y*5000,2000)}px)`, zIndex: 0}}>
+              <h1>Grey Kienzle</h1>
+              <p>Front-end web developer, Python software engineer</p>
+            </div>
+              
           </section>
-          <div className="spacer black-dark-blue"/>
+          <div className="spacer black-dark-blue" style={{zIndex: 5}}/>
           <section className="dark-blue">
-            <h1>Title</h1>
-            <p>Quia totam suscipit velit magni nulla delectus mollitia exercitationem, perspiciatis, alias odio qui, tempore adipisci natus consequuntur. Corrupti similique animi atque reiciendis, quia aut ducimus error aliquam quo necessitatibus nulla.</p>
-            <div className="cubey"><Cube/></div>
+            <div  style={{transform: `translateX(${Math.min(y*10000-3000,0)}px)`, zIndex: 0, opacity: `${Math.min(y*3,1)}`}}>
+              <h1>Title</h1>
+              <p>Quia totam suscipit velit magni nulla delectus mollitia exercitationem, perspiciatis, alias odio qui, tempore adipisci natus consequuntur. Corrupti similique animi atque reiciendis, quia aut ducimus error aliquam quo necessitatibus nulla.</p>
+            
+            </div>
+           <div className="cubey"><Cube/></div>
           </section>
           <div className="spacer dark-blue-yellow"/>
           <section className="yellow">
