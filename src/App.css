@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Source+Code+Pro:wght@300&display=swap');
 
 :root {
   --black: #323031;
@@ -27,7 +27,6 @@ header{
 .navbar {
   position: fixed;
   width: 100vw;
-  height: 5vw;
   top: 0;
   z-index: 10;
   font-size: 0.5em;
@@ -63,12 +62,68 @@ li a:hover {
   background-color: var(--dark-blue);
 }
 
+.heading-wrapper {
+  display: flex;
+  margin: auto;
+  height: min-content;
+  width: fit-content;
+}
+
+.ticker {
+  margin: auto;
+  margin-right: 0.5em;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.heading {
+  margin: auto;
+  font-family: 'Source Code Pro', monospace;
+  position: relative;
+}
+
+
+.heading::after,
+.heading::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* .heading::after {
+  content: "____________";
+  transform: translateY(0.2em);
+} */
+
+.heading::before {
+  background: var(--black);
+  z-index: 1;
+  border-left: 0.1em solid white;
+  animation-name: shrink, bar;
+  animation-duration: 3s, 0.9s;
+  animation-timing-function: steps(12), steps(2);
+  animation-delay: 2s, 0s;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: forwards, forwards;
+}
+
+@keyframes shrink {
+  0% {left:0}
+  100% {left:100%}
+}
+
+@keyframes bar {
+  0% {border-left-width: 0;}
+  100% {border-left-width: 0.1em;}
+}
+
 section {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 600px;
+  display: grid;
+  place-items: center;
+  min-height: 90vh;
   padding: 50px 20vw;
   z-index: 1;
 }
@@ -144,7 +199,9 @@ section {
   background-image: url('./dark-blue-yellow.svg');
 }
 
-
+.dark-blue-white {
+  background-image: url('./dark-blue-white.svg');
+}
 
 .cubey{
   position:absolute;

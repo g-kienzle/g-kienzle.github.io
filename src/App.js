@@ -41,7 +41,6 @@ function App() {
               <li><a href="news.asp">News</a></li>
               <li><a href="contact.asp">Contact</a></li>
               <li><a href="about.asp">About</a></li>
-              <li>{x}, {y}</li>
             </ul>
           </nav>
         </header>
@@ -49,9 +48,9 @@ function App() {
         <body>
           
           <section className="black"> 
-            <div style={{transform: `translateY(${Math.min(y*5000,2000)}px)`, zIndex: 0}}>
-              <h1>Grey Kienzle</h1>
-              <p>Front-end web developer, Python software engineer</p>
+            <div style={{/*transform: `translateY(${Math.min(y*5000,2000)}px)`*/ position: 'fixed', zIndex: 0}}>
+              <div className="heading-wrapper"><h1 className="ticker">{'>'}</h1><h1 className="heading">Grey Kienzle</h1></div>
+              <p>Front-end web developer, aspiring software engineer, mathematician at heart</p>
             </div>
               
           </section>
@@ -64,8 +63,8 @@ function App() {
             </div>
            <div className="cubey"><Cube/></div>
           </section>
-          <div className="spacer dark-blue-yellow"/>
-          <section className="yellow">
+          <div className="spacer dark-blue-white"/>
+          <section className="white">
             <h1>Title</h1>
             <p>Optio nam voluptate asperiores eaque quasi rerum alias earum accusantium cumque est temporibus sint id non deleniti laborum ea blanditiis, reprehenderit atque assumenda corrupti aspernatur eligendi! Eius qui obcaecati maiores?</p>
           </section>
