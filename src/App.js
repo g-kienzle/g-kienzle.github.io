@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import ContactForm from './ContactForm';
 import Cube from './Cube';
 
 function useScroll() {
@@ -37,45 +38,52 @@ function App() {
         <header>  
           <nav className="navbar">
             <ul>
-              <li><a href="default.asp">Home</a></li>
-              <li><a href="news.asp">News</a></li>
-              <li><a href="contact.asp">Contact</a></li>
-              <li><a href="about.asp">About</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
         </header>
         
-        <body>
+        <div>
           
-          <section className="black"> 
-            <div style={{/*transform: `translateY(${Math.min(y*5000,2000)}px)`*/ position: 'fixed', zIndex: 0}}>
+          <section className="black" id="home"> 
+            <div style={{position: 'fixed', zIndex: 0}}>
               <div className="heading-wrapper"><h1 className="ticker">{'>'}</h1><h1 className="heading">Grey Kienzle</h1></div>
               <p>Front-end web developer, aspiring software engineer, mathematician at heart</p>
             </div>
               
           </section>
-          <div className="spacer black-dark-blue" style={{zIndex: 5}}/>
-          <section className="dark-blue">
-            <div  style={{transform: `translateX(${Math.min(y*10000-3000,0)}px)`, zIndex: 0, opacity: `${Math.min(y*3,1)}`}}>
-              <h1>Title</h1>
-              <p>Quia totam suscipit velit magni nulla delectus mollitia exercitationem, perspiciatis, alias odio qui, tempore adipisci natus consequuntur. Corrupti similique animi atque reiciendis, quia aut ducimus error aliquam quo necessitatibus nulla.</p>
+          <div className="spacer black-white" style={{zIndex: 5}}/>
+          <section className="white" id="about">
+            <div style={{zIndex: 0, opacity: `${Math.min(y*3,1)}`}}>
+              <h1>About Me</h1>
+              <ul>
+                <li>CS/Math Major at the University of Maryland {"(Class of 2024)"}</li>
+                <li>Aspiring Software Engineer</li>
+                <li>Experienced in Python, Java, and HTML/CSS</li>
+                <li>Learning front-end development with ReactJS</li>
+                <li><a href="https://www.gnu.org/philosophy/free-sw.html">Free software</a> is my friend</li>
+              </ul>
+              
             
             </div>
            <div className="cubey"><Cube/></div>
           </section>
-          <div className="spacer dark-blue-white"/>
-          <section className="white">
+          <div className="spacer white-black"/>
+          <section className="black" id="projects">
             <h1>Title</h1>
             <p>Optio nam voluptate asperiores eaque quasi rerum alias earum accusantium cumque est temporibus sint id non deleniti laborum ea blanditiis, reprehenderit atque assumenda corrupti aspernatur eligendi! Eius qui obcaecati maiores?</p>
           </section>
-          <div className="spacer yellow-blue"/>
-          <section className="blue">
-            <h1>Title</h1>
-            <p>Laborum tenetur voluptas blanditiis incidunt! Vitae repellat perferendis numquam sed praesentium ipsam temporibus vero. Ea in quaerat provident quas, ipsa, aut voluptatem ducimus culpa recusandae, et cum possimus excepturi ullam!</p>
+          <div className="spacer black-blue"/>
+          <section className="blue" id="contact">
+            <h1>Contact</h1>
+            <div className="form"><ContactForm/></div>
           </section>
         
           
-        </body>
+        </div>
 
         
         
